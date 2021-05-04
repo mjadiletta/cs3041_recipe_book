@@ -82,7 +82,6 @@ fixActive:active{
   background-color: #f1f1f1;
 }
 
-
 buttonContainer {
   text-decoration: none;
   display: flex;
@@ -116,6 +115,22 @@ buttonContainer {
 
 .higher {
   height: 5rem;  
+}
+
+favoritesButtonContainer {
+  text-decoration: none;
+  display: flex;
+  max-width: 80%;
+  max-height: 50%;
+
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+
+  flex: 1 1 auto;
+  overflow-y: auto;
 }
 
 favoritesContainer {

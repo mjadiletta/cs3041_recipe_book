@@ -229,7 +229,7 @@ var data = {
 }
 
 
-var favorites = ["White Chicken Chili", "Taco Soup"];
+var favorites = ["White Chicken Chili", "Taco Soup", "Baked Ziti", "Pancakes", "Brownies"];
 
 function selectARecipeSpecial(){
  	var e = document.getElementById("favoritesContainer")
