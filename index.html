@@ -1,2 +1,136 @@
-"HERE"
+<!DOCTYPE html>
 
+<html>
+	<head>
+		<title> Cooking With Alexa </title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="screen and (orientation:portrait)"/>
+		<link rel="stylesheet" type="text/css" href="./css/style.css" media="screen and (orientation:landscape)"/>
+		<script src="./js/swipe.js"></script>
+
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+	</head>
+
+	<body id="body">
+		<div id="main" style="display:block;height: 93%; width:100%; position: fixed;">
+			<h1>Cooking With Alexa</h1>
+			<buttonContainer><navButton class="centerButton" onclick="navButtonPress('cookARecipe')"> Cook A Recipe </navButton></buttonContainer>
+			<buttonContainer>
+				<navButton class="centerButton smallerText" onclick="badButton()"> Add a Recipe </navButton>
+				<div class="space"> </div>
+				<navButton class="centerButton smallerText" onclick="badButton()"> Remove a Recipe </navButton>
+			</buttonContainer>
+
+		</div>
+
+		
+		<div id="cookARecipe" style="display:none;height: 93%; width:100%; position: fixed;">
+			<h1>Cook A Recipe</h1>
+			<buttonContainer><navButton class="centerButton" onclick="navButtonPress('selectARecipe')"> Select A Recipe </navButton></buttonContainer>
+			<buttonContainer><navButton class="centerButton" onclick="badButton()"> Create Gorcery List </navButton></buttonContainer>
+
+		</div>
+
+		<div id="selectARecipe" style="display:none; height: 93%; width:100%; position: fixed;">
+			<h1 class="higher">Select Recipe</h1>
+			<buttonContainer><navButton class="centerButton" onclick="navButtonPress('favoriteARecipe')"> Favorite A Recipe </navButton></buttonContainer>	
+			<buttonContainer>
+				<favoritesContainer id="favoritesContainer" class="smallerText">
+				</favoritesContainer>
+			</buttonContainer>
+
+		</div>
+
+		<div id="favoriteARecipe" style="display:none; height: 93%; width:100%; position: fixed;">
+			<div class='parent--vertical' style='align-items:flex-start; height:100%'>
+				<h1 id="recipeName" class='child child--featured20' style="font-size: 5em"></h1>
+				<div id="recipeImage" class='child child--featured50' style="max-width:100%; max-height: 50%"></div>
+
+				<div id="recipeInfoContainer" class='child child--featured30' style="max-height:100%; width: 100%">
+					<div class='parent--bland' style='align-items:flex-start;'>
+						<div id="recipeInfo" class='child child--featured50' style="width:50%; height: 100%; display:block"></div>
+						<div id="favorite" class='child child--featured50' style="width:50%; height: 100%"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<div id="recipeInstructions" style="display:none; height: 93%; width:100%; position: fixed;">
+			<div class='parent--bland' style='align-items:flex-start; height:100%'>
+				<div id="intrsVertical" class='child child--featured65' style="height: 100%; width:100%;" onclick="hideMenu()">
+					<div class='parent--vertical' style='align-items:flex-start; height:100%'>
+						
+						<div class='child child--featured20' style="width:100%; height: 100%">
+							<div class='parent--bland' style='align-items:flex-start; height:100%'>
+								<div class='child child--featured90' style="width:100%; height: 100%">
+									<h1 id="recipeNameInstructions" style="font-size: 5em; height: 100%;"></h1>
+								</div>
+
+								<div id="menuBars" class='child child--featured10' style="width:100%; height: 100%">
+									<div style="height: 100%; align-items:center; justify-content:center; display: flex; vertical-align: middle"><img src="./img/menu.png" style="width:100%; margin:0px 10px 0px 0px" onclick="showMenu()"></div>
+								</div>
+							</div>
+						</div>
+
+
+						<h1 id="instructionNumber" class='child child--featured5' style="font-size: 4em; margin:15px; height: 100%"></h1>
+
+						<div id="recipeInstructionsTextContainer" class='child child--featured75' style="width:100%; height: 100%; padding:15px">
+							<div id="recipeInstructionsText" style="font-size:3em; width:85%; height: 100%;"></div>
+						</div>
+					</div>
+				</div>
+
+				<div id="verticalMenu" class='child child--featured35 menu' style='align-items: flex-start; justify-content: center'>
+					<div style="padding:20px; font-size: 1.4em">
+						<div style="padding: 20px 20px 30px 20px"> Instructions </div>
+						<div id="instructionsMenuJump"></div>
+
+						<div style="padding: 40px 20px 30px 20px"> Voice Input </div> 
+						<div id="Voice Commands" style="font-size:.7em">
+							Alexa - read me the ingredients.<br><br>
+							Alexa - read me this instruction.<br><br>
+							Alexa - How much of [ingredient] is required?<br><br>
+							Alexa - What temperature do I need to set the oven too?<br><br>
+							Alexa - next instruction.<br><br>
+							Alexa - previous instruction.<br><br>
+							Alexa - Jump to instruction 2.<br><br>
+							
+						</div> 
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="badButton" style="display:none; height: 93%; width:100%; position: fixed;">
+			<h1>This functionality does not exist. Out of the scope of this project</h1>
+		</div>
+
+
+
+		
+		<footer>
+			<navButton id="homeButton" onclick="homePage()" class="home round" ><img src="./img/home_button.png" style='max-height:100%;'></navButton>
+			<navButton id="upButton" onclick="up()" class="up round" style='display:none;'><fixActive style="display:flex; width:100%; height:100%; justify-content: center; align-items: center"><img src="./img/up_button.png" style='max-height:100%;'></fixActive></navButton>
+			<navButton id="downButton" onclick="down()" class="down round" style='display:none;'><fixActive style="display:flex; width:100%; height:100%; justify-content: center; align-items: center"><img src="./img/down_button.png" style='max-height:100%;'></fixActive></navButton>
+			<navButton id="prevButton" onclick="prevPage()" class="prev round"><fixActive style="display:flex; width:100%; height:100%; justify-content: center; align-items: center"><img src="./img/back.png" style='max-height:100%;'></fixActive></navButton>
+		</footer>
+		
+		<div id="prev_page" style="visibility:hidden">main</div>
+		<div id="curr_page" style="visibility:hidden">main</div>
+		
+		<!--
+		<div id="prev_page" style="visibility:hidden">selectARecipe</div>
+		<div id="curr_page" style="visibility:hidden">selectARecipe</div>
+		-->
+	
+		<script type="text/javascript">
+			checkPrevButton();
+			mainScript();
+		</script>
+	</body>
+
+</html>
