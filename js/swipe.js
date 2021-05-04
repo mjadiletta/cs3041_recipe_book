@@ -241,7 +241,7 @@ function selectARecipeSpecial(){
 	new_favorite = ""
 	for (var i=0; i < favorites.length; i++){
 		new_favorite += "<div class='parent parent--fade-children' onclick='goToRecipeInstructions(" + '"' + favorites[i] + '"' + ")'>"
-		new_favorite += "<div class='child child--featured30'><img src='" + data[favorites[i]]["img"] + "' style='max-width:100%;'></div>"
+		new_favorite += "<div class='child child--featured30'><img src='" + data[favorites[i]]["img"] + "' style='max-width:100%; max-height:90px'></div>"
 		new_favorite += "<div class='child child--featured50'>"
 			new_favorite += "<div class='parent--vertical' style='align-items:flex-start'>"
 				new_favorite += "<div class='child child--featured30' style='font-size: 2em; padding:10px 0px 0px 5px'>" + favorites[i] + "</div>"
