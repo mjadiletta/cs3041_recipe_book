@@ -174,10 +174,6 @@ favoriteRecipe {
   width: 100%;
 }
 
-.child {
-  font-size: 1.6em;
-}
-
 .child--featured5 {
   display: flex;
   flex-basis: 5%;
